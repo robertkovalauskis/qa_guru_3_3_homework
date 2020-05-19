@@ -27,6 +27,9 @@ dependencies {
 }
 
 test {
+
+    systemProperty "chromeoptions.args","--disable-notifications"
+    systemProperty "chromeoptions.prefs","intl.accept_languages=es"
     useJUnitPlatform()
 
     testLogging {
