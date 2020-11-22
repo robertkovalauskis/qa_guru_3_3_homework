@@ -30,7 +30,7 @@ public class HomeworkTest {
         $("#more-buttons").scrollTo().shouldHave(text("Архивные счета и депозиты")).click();
         $$(byText("Депозиты")).find(visible).parent().click();
 
-        $$("div[class='']").shouldHaveSize(5);
+        $("div[class='']").findAll("div[data-widget-name=\"CatalogCard\"]").shouldHaveSize(5);
     }
 
 
