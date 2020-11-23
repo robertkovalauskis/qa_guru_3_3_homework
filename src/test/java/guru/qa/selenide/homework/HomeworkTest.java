@@ -22,9 +22,8 @@ public class HomeworkTest {
 
     @Test
     void countOfDeposits() {
-
         open("https://alfabank.ru/make-money/");
-
+        // Вклады
         $x("//a[@href='/make-money/deposits/']/button").click();
         $$(byText("Депозиты")).find(visible).parent().click();
         $("#more-buttons").scrollTo().shouldHave(text("Архивные счета и депозиты")).click();
@@ -38,7 +37,7 @@ public class HomeworkTest {
         open("https://alfabank.ru/make-money/");
 
         $$(byText("Депозиты")).find(visible).parent().click();
-       // $x("//a[@href='/make-money/archive/']").scrollTo().closest("button").click();
+        // $x("//a[@href='/make-money/archive/']").scrollTo().closest("button").click();
         $x("//button[@data-test-id='button']").scrollTo().closest("a").click();
         $x("//button[@data-test-id='tabs-list-tabTitle-0']").sibling(0)
                 .preceding(0).sibling(0).click();
