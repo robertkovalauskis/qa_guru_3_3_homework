@@ -33,5 +33,16 @@ public class HomeworkTest {
         $("div[class='']").findAll("div[data-widget-name=\"CatalogCard\"]").shouldHaveSize(5);
     }
 
+    @Test
+    void siblingsTest() {
+        open("https://alfabank.ru/make-money/");
+
+        $$(byText("Депозиты")).find(visible).parent().click();
+       // $x("//a[@href='/make-money/archive/']").scrollTo().closest("button").click();
+        $x("//button[@data-test-id='button']").scrollTo().closest("a").click();
+        $x("//button[@data-test-id='tabs-list-tabTitle-0']").sibling(0)
+                .preceding(0).sibling(0).click();
+    }
+
 
 }
